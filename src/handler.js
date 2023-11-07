@@ -1,10 +1,9 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-const { nanoid } = require('nanoid');
+const { v4: uuidv4 } = require('uuid');
 const notes = require('./notes');
 
 const addNoteHandler = (request, h) => {
   const { title, tags, body } = request.payload;
-  const id = nanoid();
+  const id = uuidv4();
   const createdAt = new Date().toISOString();
   const updatedAt = createdAt;
 
